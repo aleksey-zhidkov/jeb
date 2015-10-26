@@ -66,7 +66,7 @@ def move_disk(peg1, peg2):
 
     if base_backup_name is None:
         print 'Create base backup'
-        call(["cp", "-lr", source, new_backup_name])
+        call(["cp", "-r", source, new_backup_name])
     else:
         print 'Creating backup ' + new_backup_name + ' on base ' + base_backup_name
         call(["rsync", "-avh", "--delete", "--link-dest=" + base_backup_name, source, new_backup_name])
